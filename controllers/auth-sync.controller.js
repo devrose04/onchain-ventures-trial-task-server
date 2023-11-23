@@ -8,7 +8,8 @@ require('dotenv').config()
 
 export async function syncUsers(req, res) {
   try {
-    console.log("[syncUsers] Raw User Data:", req.body);
+    console.log("[auth-sync/users] Requested");
+    console.log("[auth-sync/users] Sync Data:", req.body);
   
     let error;
     switch (req.body.type) {
@@ -30,7 +31,9 @@ export async function syncUsers(req, res) {
       res.status(500).json({code: error.code, message: error.message});
     else
       res.status(200).json({message: "DB Operation Success"});
+    
+    console.log("[auth-sync/users] Responded");
   } catch(e) {
-    console.log("[syncUsers] Error:", e);
+    console.error("[auth-sync/users] Error:", e);
   }
 }
