@@ -1,8 +1,11 @@
 
-var express = require('express');
-var router = express.Router();
-var controller = require('../../controllers/api/futures.controller');
+const express = require('express');
+const router = express.Router();
+const controller = require('../../controllers/api/futures.controller');
 
 router.get('/getMarkets', controller.getMarkets);
+router.get('/getFuturesTrades', controller.getFuturesTrades);
+router.get('/getPythCandles', controller.getPythCandles);
+router.get('/getFuturesMarkets', controller.getFuturesMarkets);
 
 module.exports = router;

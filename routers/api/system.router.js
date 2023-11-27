@@ -1,7 +1,7 @@
 
-var express = require('express');
-var router = express.Router();
-var controller = require('../../controllers/api/system.controller');
+const express = require('express');
+const router = express.Router();
+const controller = require('../../controllers/api/system.controller');
 
 router.get('/checkSynthetixStatus', controller.checkSynthetixStatus);
 router.get('/fetchKwentaStatus', controller.fetchKwentaStatus);
